@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
-Route::get('/', fn () => redirect()->route('login'));
+Route::get('/', function (Request $request) {
+    $tenant = app(TenantManager::class)->current();
+    if ($tenant && $request->user()) return redirect()->route('dashboard');
+    return $tenant ? view('auth.login') : view('portal');
+})->name('home');
 Route::middleware('guest')->group(function (): void {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login.store');
