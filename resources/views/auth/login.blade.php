@@ -2,18 +2,18 @@
 @section('content')
 <main class="grid min-h-screen lg:grid-cols-2">
     <section class="hidden flex-col justify-between bg-[var(--color-primary)] p-12 text-white lg:flex">
-        <span class="text-xl font-bold tracking-widest">SIGA-CLOUD</span>
+        <span class="text-xl font-bold tracking-widest">EduGest</span>
         <div><div class="mb-6 h-1 w-16 bg-[var(--color-secondary)]"></div><h1 class="max-w-lg text-4xl font-semibold leading-tight">O conhecimento começa com uma boa gestão.</h1><p class="mt-6 max-w-md text-lg text-white/80">Um espaço para ligar a instituição, os docentes e os estudantes.</p></div>
-        <p class="text-sm text-white/70">Gestão escolar e académica</p>
+        <p class="text-sm text-white/70">EduGest — Sistema de Gestão Académica</p>
     </section>
     <section class="flex items-center justify-center px-5 py-12 sm:px-12">
         <div class="w-full max-w-md">
             @if(data_get($currentTenant?->settings, 'logo_path'))
                 <img src="{{ route('tenant.logo') }}" alt="Logótipo institucional" class="mb-6 h-20 max-w-full object-contain">
             @else
-                <div aria-hidden="true" class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-primary)] text-2xl font-bold text-white">{{ mb_substr($currentTenant?->name ?? 'SIGA', 0, 1) }}</div>
+                <div aria-hidden="true" class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-primary)] text-2xl font-bold text-white">{{ mb_substr($currentTenant?->name ?? 'EduGest', 0, 1) }}</div>
             @endif
-            <p class="mb-2 text-sm font-semibold text-slate-600">{{ $currentTenant?->name ?? 'SIGA-CLOUD · Administração central' }}</p>
+            <p class="mb-2 text-sm font-semibold text-slate-600">{{ $currentTenant?->name ?? 'EduGest · Administração central' }}</p>
             <h2 class="text-3xl font-bold">Bem-vindo de volta</h2><p class="mt-3 text-slate-600">Introduza os seus dados para aceder ao portal.</p>
             <form method="POST" action="{{ route('login.store') }}" class="mt-8 space-y-5">
                 @csrf

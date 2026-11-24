@@ -1,4 +1,12 @@
-# SIGA-CLOUD — Fase 1
+# EduGest — Sistema de Gestão Académica
+
+Anteriormente designado SIGA-CLOUD. O repositório mantém o nome `gestao-academica-mz`.
+
+## Actualizar o nome numa instalação existente
+
+Definir `APP_NAME=EduGest` no `.env` e executar `php artisan config:clear` e `php artisan view:clear`. Esta alteração não renomeia domínios, bases de dados nem contas de demonstração existentes.
+
+## Fase 1
 
 Fundação white-label, multi-tenancy e autenticação. Criada de raiz porque a pasta disponibilizada estava vazia. Não foram alterados projectos existentes ou servidores de produção.
 
