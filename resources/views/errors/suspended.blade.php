@@ -1,0 +1,1 @@
+<!DOCTYPE html><html lang="pt-MZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Instituição suspensa</title></head><body><main><h1>Instituição suspensa</h1><p>O acesso a {{ $institutionName }} encontra-se suspenso. Contacte a administração da instituição.</p></main></body></html>
